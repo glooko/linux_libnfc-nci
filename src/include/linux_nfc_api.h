@@ -454,67 +454,67 @@ typedef struct {
 
 /**
 * \brief read text message from NDEF data.
-* \param ndef_buff:  the buffer with ndef message
-* \param ndef_buff_length:  the length of buffer
-* \param out_text:  the buffer to fill text in
-* \param out_text_length:  the length of out_text buffer
+* \param ndef_buff  the buffer with ndef message
+* \param ndef_buff_length  the length of buffer
+* \param out_text  the buffer to fill text in
+* \param out_text_length  the length of out_text buffer
 * \return the length of ndef message if success, otherwise -1
 */
 extern int ndef_readText(unsigned char *ndef_buff, unsigned int ndef_buff_length, char * out_text, unsigned int out_text_length);
 
 /**
 * \brief read language code from NDEF Text type message
-* \param ndef_buff:  the buffer with ndef message
-* \param ndef_buff_length:  the length of buffer
-* \param out_language_code:  the buffer to fill language code in
-* \param out_language_code_length:  the length of out_language_code buffer
+* \param ndef_buff  the buffer with ndef message
+* \param ndef_buff_length  the length of buffer
+* \param out_language_code  the buffer to fill language code in
+* \param out_language_code_length  the length of out_language_code buffer
 * \return the length of language code if success, otherwise -1
 */
 extern int ndef_readLanguageCode(unsigned char *ndef_buff, unsigned int ndef_buff_length, char * out_language_code, unsigned int out_language_code_length);
 
 /**
 * \brief read uri message from NDEF data.
-* \param ndef_buff:  the buffer with ndef message
-* \param ndef_buff_length:  the length of buffer
-* \param out_url:  the buffer to fill url in
-* \param out_url_length:  the length of out_url buffer
+* \param ndef_buff  the buffer with ndef message
+* \param ndef_buff_length  the length of buffer
+* \param out_url  the buffer to fill url in
+* \param out_url_length  the length of out_url buffer
 * \return the length of ndef message if success, otherwise -1
 */
 extern int ndef_readUrl(unsigned char *ndef_buff, unsigned int ndef_buff_length, char * out_url, unsigned int out_url_length);
 
 /**
 * \brief read handover select message from NDEF data.
-* \param ndef_buff:  the buffer with handover ndef message
-* \param ndef_buff_length:  the length of handover ndef message
-* \param info:  handover select information to be filled
+* \param ndef_buff  the buffer with handover ndef message
+* \param ndef_buff_length  the length of handover ndef message
+* \param info  handover select information to be filled
 * \return 0 if success, otherwise failed.
 */
 extern int ndef_readHandoverSelectInfo(unsigned char *ndef_buff, unsigned int ndef_buff_length, nfc_handover_select_t *info);
 
 /**
 * \brief read handover request message from NDEF data.
-* \param ndef_buff:  the buffer with handover ndef message
-* \param ndef_buff_length:  the length of handover ndef message
-* \param info:  handover request information to be filled
+* \param ndef_buff  the buffer with handover ndef message
+* \param ndef_buff_length  the length of handover ndef message
+* \param info  handover request information to be filled
 * \return 0 if success, otherwise failed.
 */
 extern int ndef_readHandoverRequestInfo(unsigned char *ndef_buff, unsigned int ndef_buff_length, nfc_handover_request_t *info);
 
 /**
 * \brief Create a new NDEF Record containing a URI.
-* \param uri:  the uri to be written
-* \param out_ndef_buff:  the buffer to store ndef message
-* \param out_ndef_buff_length:  the length of ndef buffer
+* \param uri  the uri to be written
+* \param out_ndef_buff  the buffer to store ndef message
+* \param out_ndef_buff_length  the length of ndef buffer
 * \return the length of NDEF buffer be used.
 */
 extern int ndef_createUri(char *uri, unsigned char *out_ndef_buff, unsigned int out_ndef_buff_length);
 
 /**
 * \brief Create a new NDEF Record containing a text.
-* \param language_code:  language encoding code
-* \param text:  text to be written
-* \param out_ndef_buff:  the buffer to store ndef message
-* \param out_ndef_buff_length:  the length of ndef buffer
+* \param language_code  language encoding code
+* \param text  text to be written
+* \param out_ndef_buff  the buffer to store ndef message
+* \param out_ndef_buff_length  the length of ndef buffer
 * \return the length of NDEF buffer be used.
 */
 extern int ndef_createText(char *language_code, char *text,
@@ -522,11 +522,11 @@ extern int ndef_createText(char *language_code, char *text,
 
 /**
 * \brief Create a new NDEF Record containing MIME data
-* \param mime_type:    a valid MIME type
-* \param mime_data:  MIME data as bytes array
-* \param mime_data_length:  MIME data length
-* \param out_ndef_buff:  the buffer to store ndef message
-* \param out_ndef_buff_length:  the length of ndef buffer
+* \param mime_type    a valid MIME type
+* \param mime_data  MIME data as bytes array
+* \param mime_data_length  MIME data length
+* \param out_ndef_buff  the buffer to store ndef message
+* \param out_ndef_buff_length  the length of ndef buffer
 * \return the length of NDEF buffer be used.
 */
 extern int ndef_createMime(char *mime_type, unsigned char *mime_data, unsigned int mime_data_length,
@@ -534,12 +534,12 @@ extern int ndef_createMime(char *mime_type, unsigned char *mime_data, unsigned i
 
 /**
 * \brief Create a new NDEF Record containing Handover Select message
-* \param cps:    Carrier power state
-* \param carrier_data_ref:  carrier data reference name
-* \param ndef_buff:  carrier configuration record
-* \param ndef_buff_length:  carrier configuration record length
-* \param out_ndef_buff:  the buffer to store handover select message
-* \param out_ndef_buff_length:  the length of handover select message
+* \param cps    Carrier power state
+* \param carrier_data_ref  carrier data reference name
+* \param ndef_buff  carrier configuration record
+* \param ndef_buff_length  carrier configuration record length
+* \param out_ndef_buff  the buffer to store handover select message
+* \param out_ndef_buff_length  the length of handover select message
 * \return the length of NDEF buffer be used.
 */
 extern int ndef_createHandoverSelect(nfc_handover_cps_t cps, char *carrier_data_ref,
@@ -547,8 +547,8 @@ extern int ndef_createHandoverSelect(nfc_handover_cps_t cps, char *carrier_data_
 
 /**
 * \brief Check if the tag is Ndef formated.
-* \param handle:  handle to the tag.
-* \param info:           information about tag to be retreived
+* \param handle  handle to the tag.
+* \param info           information about tag to be retreived
 * \return 1 with info if it is Ndef tag, otherwise 0.
 *
 */
@@ -556,10 +556,10 @@ extern int nfcTag_isNdef(unsigned int handle, ndef_info_t *info);
 
 /**
 * \brief Read ndef message from tag.
-* \param handle:  handle to the tag.
-* \param ndef_buffer:  the buffer to be filled with ndef message
-* \param ndef_buffer_length:  the length of buffer
-* \param friendly_ndef_type:  the friendly ndef type of ndef message
+* \param handle  handle to the tag.
+* \param ndef_buffer  the buffer to be filled with ndef message
+* \param ndef_buffer_length  the length of buffer
+* \param friendly_ndef_type  the friendly ndef type of ndef message
 * \return the length of ndef message if success, otherwise -1.
 *
 */
@@ -567,16 +567,16 @@ extern int nfcTag_readNdef(unsigned int handle, unsigned char *ndef_buffer,  uns
 
 /**
 * \brief Write ndef message to tag.
-* \param handle:  handle to the tag.
-* \param ndef_buffer:  the buffer with ndef message
-* \param ndef_buffer_length:  the length of buffer
+* \param handle  handle to the tag.
+* \param ndef_buffer  the buffer with ndef message
+* \param ndef_buffer_length  the length of buffer
 * \return if success, otherwise failed.
 */
 extern int nfcTag_writeNdef(unsigned int handle, unsigned char *ndef_buffer, unsigned int ndef_buffer_length);
 
 /**
 * \brief Check if the tag is Ndef formatable.
-* \param handle:  handle to the tag.
+* \param handle  handle to the tag.
 * \return 1 with info if it is Ndef tag Formattable, otherwise 0.
 *
 */
@@ -584,7 +584,7 @@ extern int nfcTag_isFormatable(unsigned int handle);
 
 /**
 * \brief Format the NDEF Formatable Tag.
-* \param handle:  handle to the tag.
+* \param handle  handle to the tag.
 * \return if success, otherwise failed.
 *
 */
@@ -593,27 +593,27 @@ extern int nfcTag_formatTag(unsigned int handle);
 
 /**
 * \brief Make the tag read-only.
-* \param handle:  handle to the tag.
+* \param handle  handle to the tag.
 * \return 0 if success, otherwise failed.
 */
 extern int nfcTag_makeReadOnly(unsigned int handle, unsigned char *key, unsigned char key_length);
 
 /**
 * \brief Switch RF interface for ISO-DEP and MifareClassic tag.
-* \param handle:  handle to the tag.
-* \param is_frame_rf:  indicates if the target RF interface is Frame RF or not.
+* \param handle  handle to the tag.
+* \param is_frame_rf  indicates if the target RF interface is Frame RF or not.
 * \return 0 if success, otherwise failed.
 */
 extern int nfcTag_switchRF(unsigned int handle, int is_frame_rf);
 
 /**
 * \brief Send raw command to tag.
-* \param handle:  handle to the tag.
-* \param tx_buffer:  the buffer to be sent
-* \param tx_buffer_length:  the length of send buffer
-* \param rx_buffer:  the receive buffer to be filled
-* \param rx_buffer_length:  the length of receive buffer
-* \param timeout:  the timeout value in milliseconds
+* \param handle  handle to the tag.
+* \param tx_buffer  the buffer to be sent
+* \param tx_buffer_length  the length of send buffer
+* \param rx_buffer  the receive buffer to be filled
+* \param rx_buffer_length  the length of receive buffer
+* \param timeout  the timeout value in milliseconds
 * \return the real length of data received or 0 if failed.
 */
 extern int nfcTag_transceive (unsigned int handle, unsigned char *tx_buffer, int tx_buffer_length, unsigned char* rx_buffer, int rx_buffer_length, unsigned int timeout);
@@ -640,31 +640,27 @@ extern int nfcManager_isNfcActive();
 
 /**
 * \brief Start nfc discovery.
-* \param technologies_masks:  Nfc technology mask.
-* \param reader_only_mode:  indicates if enable reader only mode. (Means no P2P or HCE)
-* \param enable_host_routing:  indicates if enable host card emualtion
-* \param restart:  indicates if force restart discovery
-* \return 0 if success, otherwise failed.
+* \param technologies_masks  Nfc technology mask.
+* \param reader_only_mode  indicates if enable reader only mode. (Means no P2P or HCE)
+* \param enable_host_routing  indicates if enable host card emualtion
+* \param restart  indicates if force restart discovery
 */
 extern void nfcManager_enableDiscovery (int technologies_masks,
                         int reader_only_mode, int enable_host_routing, int restart);
 
 /**
 * \brief Stop polling and listening for devices.
-* \return None
 */
 extern void nfcManager_disableDiscovery ();
 
 /**
 * \brief Register a tag callback functions.
-* \param callback:  tag callback functions.
-* \return None
+* \param callback  tag callback functions.
 */
 extern void nfcManager_registerTagCallback(nfcTagCallback_t *callback);
 
 /**
 * \brief Deregister a tag callback functions.
-* \return None
 */
 extern void nfcManager_deregisterTagCallback();
 
@@ -688,134 +684,126 @@ extern int nfcManager_getFwVersion();
 
 /**
 * \brief Register a callback functions for snep client.
-* \param client_callback:  snep client callback functions.
+* \param client_callback  snep client callback functions.
 * \return 0 if success
 */
 extern int nfcSnep_registerClientCallback(nfcSnepClientCallback_t *client_callback);
 
 /**
 * \brief Deregister a callback functions for snep client.
-* \return None
 */
 extern void nfcSnep_deregisterClientCallback();
 
 /**
 * \brief Start a snep server to receive snep message.
-* \param server_callback:  snep server callback functions.
+* \param server_callback  snep server callback functions.
 * \return 0 if success
 */
 extern int nfcSnep_startServer(nfcSnepServerCallback_t *server_callback);
 
 /**
 * \brief Stop senp server.
-* \return None
 */
 extern void nfcSnep_stopServer();
 
 /**
 * \brief put a snep message to remote snep server.
-* \param msg:  snep message.
-* \param length:  snep message length.
+* \param msg  snep message.
+* \param length  snep message length.
 * \return 0 if success, otherwise failed.
 */
 extern int nfcSnep_putMessage(unsigned char* msg, unsigned int length);
 
 /**
 * \brief Register a callback functions for host card emulation.
-* \param callback:  host card emualtion callback functions.
-* \return None
+* \param callback  host card emualtion callback functions.
 */
 extern void nfcHce_registerHceCallback(nfcHostCardEmulationCallback_t *callback);
 
 /**
 * \brief Deregister the host card emulation callback.
-* \return None
 */
 extern void nfcHce_deregisterHceCallback();
 
 /**
 * \brief Send Apdu to remote reader.
-* \param command:  apdu package to be sent.
-* \param command_length: apdu package length
+* \param command  apdu package to be sent.
+* \param command_length apdu package length
 * \return 0 if success, otherwise failed.
 */
 extern int nfcHce_sendCommand(unsigned char* command, unsigned int command_length);
 
 /**
 * \brief register T3T identifier
-* \param id:  T3T identifier value.
-* \param length:  T3T identifier size.
-* \return 0 if success, otherwise failed.
+* \param Id  T3T identifier value.
+* \param Idsize  T3T identifier size.
 */
 extern void nfcHce_registerT3tIdentifier (unsigned char *Id, unsigned char Idsize);
 
 /**
 * \brief Register the handover callback.
-* \param callback:  handover callback functions.
+* \param callback  handover callback functions.
 * \return 0 if success, otherwise failed.
 */
 extern int nfcHo_registerCallback(nfcHandoverCallback_t *callback);
 
 /**
 * \brief Deregister the handover callback.
-* \return None
 */
 extern void nfcHo_deregisterCallback();
 
 /**
 * \brief Send Handover Select Message to remote device.
-* \param message:  handover Select message.
-* \param length:  handover Select message length.
+* \param message  handover Select message.
+* \param length  handover Select message length.
 * \return 0 if success, otherwise failed.
 */
 extern int nfcHo_sendSelectRecord(unsigned char *message, unsigned int length);
 
 /**
 * \brief Send Handover select error to remote device.
-* \param reason:  error reason.
-* \param data:  error data.
+* \param reason  error reason.
+* \param data  error data.
 * \return 0 if success, otherwise failed.
 */
 extern int nfcHo_sendSelectError(unsigned int reason, unsigned int data);
 
 /**
 * \brief Register a callback functions for LLCP client.
-* \param client_callback:  LLCP client callback functions.
+* \param client_callback  LLCP client callback functions.
 * \return 0 if success
 */
 extern int nfcLlcp_ConnLessRegisterClientCallback(nfcSnepClientCallback_t *client_callback);
 
 /**
 * \brief Deregister a callback functions for LLCP client.
-* \return None
 */
 extern void nfcLlcp_ConnLessDeregisterClientCallback();
 
 /**
 * \brief Start a LLCP Connection Less server to receive LLCP message.
-* \param server_callback:  LLCP connectionless server callback functions.
+* \param server_callback  LLCP connectionless server callback functions.
 * \return 0 if success
 */
 extern int nfcLlcp_ConnLessStartServer(nfcllcpConnlessServerCallback_t *server_callback);
 
 /**
 * \brief Stop LLCP server.
-* \return None
 */
 extern void nfcLlcp_ConnLessStopServer();
 
 /**
 * \brief Send a LLCP message to remote LLCP server.
-* \param msg:  LLCP message.
-* \param length:  LLCP message length.
+* \param msg  LLCP message.
+* \param length  LLCP message length.
 * \return 0 if success, otherwise failed.
 */
 extern int nfcLlcp_ConnLessSendMessage(unsigned char* msg, unsigned int length);
 
 /**
 * \brief Receive a LLCP message from remote LLCP server.
-* \param msg:  LLCP message.
-* \param length:  LLCP message length.
+* \param msg  LLCP message.
+* \param length  LLCP message length.
 * \return 0 if success, otherwise failed.
 */
 extern int nfcLlcp_ConnLessReceiveMessage(unsigned char* msg, unsigned int *length);
